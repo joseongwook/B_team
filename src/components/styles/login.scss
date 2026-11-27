@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: 'SUIT Variable';
+  src: url('../../assets/fonts/SUIT-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../../assets/fonts/GmarketSansMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==============================
+  변수 선언
+============================== */
+@use '../../assets/styles/variables' as *;
+
+.login {
+  position: relative;
+  width: 480px;
+  margin: $auto;
+  text-align: $txt_center;
+
+  // 로그인 탭
+  .login_tab {
+    display: flex;
+    width: 100%;
+    margin: {
+      top: 10px;
+      bottom: 10px;
+    };
+    
+
+    .login_btn {
+      flex: 1;
+      height: 40px;
+      background: transparent;
+      border: none;
+      box-sizing: border-box;
+      border-bottom: 4px solid $colorGr;
+      cursor: pointer;
+
+      font: {
+        family: $fontSuit;
+        weight: bold;
+        size: $fs18;
+      }
+    }
+  }
+
+  // 이메일 로그인
+  .email, .phone {
+  width: 100%;
+
+  .input_box {
+    position: relative;
+    width: 100%;
+
+    > input {
+      width: 100%;
+      height: 55px;
+      border: none;
+      border-bottom: 1px solid $colorGr;
+      padding: 0 45px 0 10px;
+      box-sizing: border-box;
+
+      font: {
+        family: $fontSuit;
+        size: $fs16;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom-color: $colorBl;
+      }
+    }
+
+    // X 버튼, 눈 아이콘
+    > button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      font-size: $fs18;
+      color: $colorGr;
+      cursor: pointer;
+    }
+  }
+}
+
+  // 자동 로그인 및 아이디ㆍ비밀번호 찾기
+  .login_option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    font-size: $fs14;
+
+    .auto_login {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    > p {
+      margin: 0;
+      cursor: pointer;
+    }
+  }
+
+  .phone {
+    p{
+      float: left;
+      font-size: $fs16;
+      color: $colorCh;
+      font-weight: $fw600;
+
+    }
+    .input_box{
+      margin-bottom: 20px;
+    }
+  }
+
+  // 로그인, 회원가입, 패스키 버튼 공통
+  .btn > button,
+  fieldset > button {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    border: 1px solid $colorBl;
+    border-radius: 10px;
+    background: $colorWh;
+    color: $colorBl;
+    cursor: pointer;
+
+    font: {
+      family: $fontSuit;
+      size: $fs16;
+      weight: $fw700;
+    }
+  }
+
+  // 로그인 및 회원가입
+  .btn {
+    width: 100%;
+    margin: 15px 0 30px;
+
+    > button:first-child {
+      background: $colorBl;
+      color: $colorWh;
+    }
+  }
+
+  // 패스키 로그인
+  fieldset {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: none;
+    border-top: 1px solid $colorGr;
+    padding: 0;
+    margin: 0;
+
+    legend {
+      padding: 0 10px;
+      font-size: $fs14;
+      color: $colorCh;
+    }
+  }
+}
